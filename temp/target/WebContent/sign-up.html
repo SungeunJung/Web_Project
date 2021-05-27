@@ -12,6 +12,10 @@
 	h1{ text-align:center }
 	input,button{ font-size:15px; height:40px; width:250px;}
 	#signUp{ background-color:#9cd3f7; border:0}
+	input[type="button"]:hover {
+	cursor:pointer;
+}
+	
 </style>
 
 <script>
@@ -28,6 +32,11 @@ function mysignUp(){
 	var pw = document.getElementById("pw").value;
 	var email = document.getElementById("email").value;
 	
+	//폼이 빈 경우
+	if(id == null||pw == null || email == null){
+		alert("회원 정보를 입력해주세요");
+		return;
+	}
 	//사용자정보 객체 생성, 정보 저장
 	var userInfo = new Object();
 	userInfo.id = id;
@@ -47,9 +56,9 @@ function mysignUp(){
 //로그인 상태인지 확인
 function checkLog(){
 	var currentLog = localStorage.getItem("login");
-	if(currentLog != null){
+	if(currentLog == "true"){
 		var logInButton = document.getElementById("logInButton");
-		logInbutton.innerHTMl = "로그아웃";
+		logInButton.innerHTML = "로그아웃";
 	}
 }
 

@@ -21,6 +21,10 @@ function checkLog(){
 		logInbutton.innerHTMl = "로그아웃";
 	}
 }
+
+function logOut(){
+	var currentLog = localStorage.getItem("");
+}
 </script>
 <body onload="checkLog()">
 
@@ -32,7 +36,7 @@ function checkLog(){
 		<li><a href="#"> 일상 </a></li>
 		<li><a href="#"> 건의사항 </a></li>
 		<li><a href="#"> 마이페이지 </a></li>
-		<li style="font-size:22px; margin-top:5px;"><a href="login.html"> 로그인 </a></li>
+		<li style="font-size:22px; margin-top:5px;" id="logInButton"><a href="login.html"> 로그인 </a></li>
 	</ul>
 </nav>
 </header>
