@@ -10,17 +10,29 @@
     <meta name="discription" content="취향공유 웹사이트">
     <meta name="keywords" content="취향, 일상, 공유">
  </head>
-<body>
+ 
+<script>
+
+//로그인 상태인지 확인
+function checkLog(){
+	var currentLog = localStorage.getItem("login");
+	if(currentLog == true){
+		var logInButton = document.getElementById("logInButton");
+		logInbutton.innerHTMl = "로그아웃";
+	}
+}
+</script>
+<body onload="checkLog()">
 
 <header>
-    <h1><span>WWH</span></h1>
+    <h1><span><a href="main.html">WWH</a></span></h1>
     <nav>
 	<ul>
-		<li><a href="#"> 취향 </a></li>
+		<li><a href="#"> 취미 </a></li>
 		<li><a href="#"> 일상 </a></li>
 		<li><a href="#"> 건의사항 </a></li>
 		<li><a href="#"> 마이페이지 </a></li>
-		<li style="font-size:22px; margin-top:5px;"><a href="#"> 로그인 </a></li>
+		<li style="font-size:22px; margin-top:5px;"><a href="login.html"> 로그인 </a></li>
 	</ul>
 </nav>
 </header>
